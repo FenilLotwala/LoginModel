@@ -1,0 +1,149 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    tools:context="com.example.mydatabaseapp.login.LoginFragment">
+
+    <data>
+
+        <variable
+            name="myLoginViewModel"
+            type="com.example.mydatabaseapp.login.LoginViewModel" />
+    </data>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/textView"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="80dp"
+            android:layout_marginTop="80dp"
+            android:layout_marginEnd="80dp"
+            android:text="@string/Login_text"
+            android:textSize="24sp"
+            android:textStyle="bold"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.5"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/userNameTextView"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="30dp"
+            android:layout_marginTop="73dp"
+            android:layout_marginEnd="30dp"
+            android:text="@string/EmailText"
+            android:textAlignment="viewStart"
+            android:textSize="16sp"
+            android:textStyle="bold"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.5"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/textView" />
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/passwordTextView"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="30dp"
+            android:layout_marginTop="20dp"
+            android:layout_marginEnd="30dp"
+            android:text="@string/PasswordText"
+            android:textAlignment="viewStart"
+            android:textSize="16sp"
+            android:textStyle="bold"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.0"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/userNameTextField" />
+
+        <androidx.appcompat.widget.AppCompatEditText
+            android:id="@+id/userNameTextField"
+            android:layout_width="0dp"
+            android:layout_height="45dp"
+            android:layout_marginStart="30dp"
+            android:paddingStart="10dp"
+            android:layout_marginTop="5dp"
+            android:layout_marginEnd="30dp"
+            android:background="@drawable/border"
+            android:ems="10"
+            android:hint="@string/UserMailId"
+            android:importantForAutofill="no"
+            android:inputType="textPersonName"
+            android:singleLine="true"
+            android:text="@={myLoginViewModel.inputUserEmail}"
+            android:textSize="14sp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/userNameTextView" />
+
+        <androidx.appcompat.widget.AppCompatEditText
+            android:id="@+id/passwordTextField"
+            android:layout_width="0dp"
+            android:layout_height="45dp"
+            android:layout_marginStart="30dp"
+            android:layout_marginTop="5dp"
+            android:layout_marginEnd="30dp"
+            android:background="@drawable/border"
+            android:ems="10"
+            android:paddingStart="10dp"
+            android:hint="@string/PasswordTextFiels"
+            android:importantForAutofill="no"
+            android:inputType="textPersonName"
+            android:text="@={myLoginViewModel.inputPassword}"
+            android:textSize="14sp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.0"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/passwordTextView" />
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/submitButton"
+            android:layout_width="200dp"
+            android:layout_height="45dp"
+            android:layout_marginTop="78dp"
+            android:gravity="center"
+            android:onClick="@{()->myLoginViewModel.loginButton()}"
+            android:text="@string/Login_button"
+            android:textStyle="bold"
+            android:textSize="18dp"
+            android:background="@drawable/border"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/passwordTextField" />
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:gravity="center"
+            android:layout_marginTop="20dp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.498"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/submitButton">
+
+            <androidx.appcompat.widget.AppCompatTextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/you_have_create_account"
+                android:textStyle="bold" />
+
+            <androidx.appcompat.widget.AppCompatTextView
+                android:id="@+id/SignUpButton"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="10dp"
+                android:onClick="@{()->myLoginViewModel.signUP()}"
+                android:text="@string/signupText"
+                android:textColor="@android:color/holo_red_light"
+                android:textStyle="bold" />
+
+        </LinearLayout>
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</layout>
