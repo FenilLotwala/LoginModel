@@ -78,9 +78,6 @@ class LoginViewModel(private val repository: RegisterRepository, application: Ap
         }
     }
 
-
-
-
     fun doneNavigatingRegiter() {
         _navigatetoRegister.value = false
     }
@@ -88,7 +85,6 @@ class LoginViewModel(private val repository: RegisterRepository, application: Ap
     fun doneNavigatingUserDetails() {
         _navigatetoUserDetails.value = false
     }
-
 
     fun donetoast() {
         _errorToast.value = false
@@ -106,13 +102,9 @@ class LoginViewModel(private val repository: RegisterRepository, application: Ap
         Log.i("MYTAG", "Done taoasting ")
     }
 
-
-
     override fun removeOnPropertyChangedCallback(callback: Observable.OnPropertyChangedCallback?) {
     }
 
     override fun addOnPropertyChangedCallback(callback: Observable.OnPropertyChangedCallback?) {
     }
-
-
 }

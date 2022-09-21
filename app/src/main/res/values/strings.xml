@@ -18,5 +18,9 @@
     <string name="Login_text">Login</string>
     <string name="Login_button">Login</string>
     <string name="signupText">Sign Up!</string>
-    <string name="you_have_create_account">You have create account ?</string>
+    <string name="don_t_have_an_account">Don\'t have an account?</string>
+    <string name="welcome_to">Welcome To</string>
+    <string name="login_screen">Login screen</string>
+    <string name="signup_screen">SignUp screen</string>
+    <string name="signup">SignUp</string>
 </resources>

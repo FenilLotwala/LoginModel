@@ -32,7 +32,6 @@ class MyviewHolder(private val binding :ListItemBinding ):RecyclerView.ViewHolde
 
     fun bind(user : RegisterEntity){
         binding.FirstNameTextView.text = user.firstName
-        binding.secondNameTextView.text = user.lastName
         binding.userTextField.text = user.email
     }
 
